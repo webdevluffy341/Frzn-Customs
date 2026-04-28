@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frozen Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Page Fade */
+body {
+    background: #020617;
+    color: white;
+    animation: fadeIn 1s ease;
+    overflow-x: hidden;
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Animated Grid */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#0ea5e9 1px, transparent 1px),
+                linear-gradient(90deg, #0ea5e9 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.08;
+    animation: moveGrid 10s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveGrid {
+    from {background-position: 0 0;}
+    to {background-position: 40px 40px;}
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 25px;
+    font-size: 28px;
+    color: #0ea5e9;
+    text-shadow: 0 0 20px #0ea5e9;
+    animation: pulse 2s infinite;
+}
+
+/* Glow Pulse */
+@keyframes pulse {
+    0% {text-shadow: 0 0 10px #0ea5e9;}
+    50% {text-shadow: 0 0 25px #0ea5e9;}
+    100% {text-shadow: 0 0 10px #0ea5e9;}
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #0ea5e9;
+    text-shadow: 0 0 10px #0ea5e9;
+}
+
+/* Hero */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    color: #0ea5e9;
+    position: relative;
+}
+
+/* Glitch Effect */
+.hero h1::before,
+.hero h1::after {
+    content: "CYBER SERVICES";
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.hero h1::before {
+    color: red;
+    animation: glitch 1s infinite;
+}
+
+.hero h1::after {
+    color: blue;
+    animation: glitch 1s infinite reverse;
+}
+
+@keyframes glitch {
+    0% {transform: translate(0);}
+    20% {transform: translate(-2px,2px);}
+    40% {transform: translate(-2px,-2px);}
+    60% {transform: translate(2px,2px);}
+    80% {transform: translate(2px,-2px);}
+    100% {transform: translate(0);}
+}
+
+/* Services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 50px;
+}
+
+/* Cards */
+.card {
+    border: 1px solid #0ea5e9;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    transition: 0.4s;
+    transform: translateY(50px);
+    opacity: 0;
+}
+
+/* Scroll Show */
+.card.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Hover */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 25px #0ea5e9;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    border: 1px solid #0ea5e9;
+    color: #0ea5e9;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+    color: black;
+    box-shadow: 0 0 20px #0ea5e9;
+    transform: scale(1.1);
+}
+
+/* Contact */
+.contact {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>FROZEN SERVICES</header>
+
+<nav>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<section class="hero">
+    <h1>CYBER SERVICES</h1>
+    <p>Mods • Growth • Design</p>
+</section>
+
+<section id="services" class="services">
+
+    <div class="card">
+        <h3>SAMP Mods</h3>
+        <p>Top-quality SA-MP mods</p>
+        <a href="#" class="btn">Buy</a>
+    </div>
+
+    <div class="card">
+        <h3>SAMP Custom Mods</h3>
+        <p>Custom-built mods</p>
+        <a href="#" class="btn">Order</a>
+    </div>
+
+    <div class="card">
+        <h3>Instagram Followers</h3>
+        <p>Fast growth services</p>
+        <a href="#" class="btn">Buy</a>
+    </div>
+
+    <div class="card">
+        <h3>Custom Logos</h3>
+        <p>Professional designs</p>
+        <a href="#" class="btn">Order</a>
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+    <h2>Join Our Discord</h2>
+    <a href="https://discord.gg/3jbCR3zsS" class="btn">Join Now</a>
+</section>
+
+<footer>
+    © 2026 Frozen Services
+</footer>
+
+<script>
+// Scroll animation
+const cards = document.querySelectorAll('.card');
+
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+
+    cards.forEach(card => {
+        const top = card.getBoundingClientRect().top;
+
+        if (top < trigger) {
+            card.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
